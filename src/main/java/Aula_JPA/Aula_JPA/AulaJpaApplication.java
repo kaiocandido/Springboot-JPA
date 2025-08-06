@@ -8,6 +8,8 @@ public class AulaJpaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AulaJpaApplication.class, args);
+		//inicialização
+
 	}
 
 }
