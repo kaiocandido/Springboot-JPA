@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tab_user")
 public class User {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
@@ -14,14 +16,14 @@ public class User {
     @Column(length = 50, nullable = false)
     private String name;
     @Column(length = 20, nullable = false)
-    private String userName;
+    private String nickname;
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", userName='" + userName + '\'' +
+                ", userName='" + nickname + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
@@ -38,11 +40,11 @@ public class User {
     }
 
     public String getUserName() {
-        return userName;
+        return nickname;
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+        this.nickname = userName;
     }
 
     public String getPassword() {
